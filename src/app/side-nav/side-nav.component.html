@@ -1,0 +1,10 @@
+<mat-accordion multi="true" togglePosition="before">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Subjects</mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let path of subjectRoutingPaths | keyvalue" [routerLink]="['/subjects/' + path.value]" routerLinkActive="router-link-active">{{path.value}}</a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+</mat-accordion>

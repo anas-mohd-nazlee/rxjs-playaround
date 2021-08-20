@@ -1,0 +1,10 @@
+<div class="rounded-border" fxLayout="column" fxLayoutAlign="center stretch" >
+  <h3>Subscriber #{{subscriberLabel}}</h3>
+  <button mat-button (click)="onSubscribeToTarget()" color="{{subscribeColor}}">Subscribe To Target</button>
+  <button mat-button (click)="onUnsubscribeTarget()">Unsubscribe From Target</button>
+  <mat-form-field class="full-width-form" appearance="outline">
+    <mat-label>Subscriber Log</mat-label>
+    <textarea matInput readonly style="height: 20vh;">{{textToDisplay}}</textarea>
+  </mat-form-field>
+  <button mat-button (click)="onRemoveSubscriber()" color="accent">Remove This Subscriber</button>
+</div>

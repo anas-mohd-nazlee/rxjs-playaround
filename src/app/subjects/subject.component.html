@@ -1,0 +1,14 @@
+<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
+  <app-target
+    [isTargetInitialized]="isTargetInitialized"
+    (sendMessage)="onPushMessage($event)"
+    (finishSubject)="onCompleteSubject()"
+    (reCreateSubject)="onCreateSubject()"
+  >
+  </app-target>
+  <app-subscriber-parent
+    [target$]="target$"
+    [isTargetInitialized]="isTargetInitialized"
+  >
+  </app-subscriber-parent>
+</div>

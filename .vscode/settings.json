@@ -1,0 +1,28 @@
+{
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#b290e1",
+      "activityBar.activeBorder": "#975729",
+      "activityBar.background": "#b290e1",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#975729",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "statusBar.background": "#9668d6",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#7a40cb",
+      "titleBar.activeBackground": "#9668d6",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#9668d699",
+      "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#9668d6",
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/.vscode": true
+    },
+    "explorerExclude.backup": null
+}

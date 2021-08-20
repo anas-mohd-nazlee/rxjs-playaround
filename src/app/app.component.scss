@@ -1,0 +1,17 @@
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+.sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content-container {
+  display: grid;
+  place-items: center;
+}
