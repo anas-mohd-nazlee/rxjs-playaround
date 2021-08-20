@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
+  <app-target
+    [isTargetInitialized]="isTargetInitialized"
+    (sendMessage)="onPushMessage($event)"
+    (finishSubject)="onCompleteSubject()"
+    (reCreateSubject)="onCreateSubject()"
+  >
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <mat-button-toggle-group (change)="onCastChange($event.value)">
+        <mat-button-toggle [value]="false" checked>Unicast</mat-button-toggle>
+        <mat-button-toggle [value]="true">Multicast</mat-button-toggle>
+      </mat-button-toggle-group>
+      <div *ngIf="isMulticast == true">
+        <button mat-raised-button (click)="onConnectObservable()">Connect</button>
+        <button mat-raised-button (click)="onDisconnectObservable()">Disconnect</button>
+      </div>
+    </div>
+  </app-target>
+  <app-subscriber-parent
+    [target$]="target$"
+    [isTargetInitialized]="isTargetInitialized"
+  >
+  </app-subscriber-parent>
+</div>

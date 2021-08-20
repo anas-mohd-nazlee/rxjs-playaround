@@ -56,11 +56,7 @@ export class TargetComponent implements OnInit {
     this.logInfo("Re-Initialize Subject");
   }
 
-  test(event: any) {
-    console.log(event);
-  }
-
-  protected logInfo(log: string): void {
+  logInfo(log: string): void {
     this.textLogs.unshift(log);
     this.cdr.detectChanges();
   }

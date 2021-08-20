@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ModuleEnums } from './routing-details';
 
 const routes: Routes = [
   {
@@ -10,6 +9,10 @@ const routes: Routes = [
   {
     path: 'creations',
     loadChildren: () => import('./creations/creations.module').then(m => m.CreationsModule)
+  },
+  {
+    path: 'utilities',
+    loadChildren: () => import('./utilities/utilities.module').then(m => m.UtilitiesModule)
   }
 ];
 

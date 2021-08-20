@@ -1,5 +1,6 @@
 import { CreationsRoutingPaths } from "./creations/creations-routing-paths";
 import { SubjectsRoutingPaths } from "./subjects/subjects-routing-paths";
+import { UtilitiesRoutingPaths } from "./utilities/utilities-routing-paths";
 
 export enum ModuleEnums {
   subjects,
@@ -16,5 +17,6 @@ export interface ModuleRouting {
 
 export const ModuleRoutings: ModuleRouting[] = [
   { moduleName: 'subjects', routingPaths: SubjectsRoutingPaths },
-  { moduleName: 'creations', routingPaths: CreationsRoutingPaths }
+  { moduleName: 'creations', routingPaths: CreationsRoutingPaths },
+  { moduleName: 'utilities', routingPaths: UtilitiesRoutingPaths }
 ]
