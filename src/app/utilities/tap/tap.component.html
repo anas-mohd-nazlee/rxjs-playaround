@@ -11,8 +11,8 @@
         <mat-button-toggle [value]="true">Multicast</mat-button-toggle>
       </mat-button-toggle-group>
       <div *ngIf="isMulticast == true">
-        <button mat-raised-button (click)="onConnectObservable()">Connect</button>
-        <button mat-raised-button (click)="onDisconnectObservable()">Disconnect</button>
+        <button mat-button (click)="onConnectObservable()">Connect</button>
+        <button mat-button (click)="onDisconnectObservable()">Disconnect</button>
       </div>
     </div>
   </app-target>
