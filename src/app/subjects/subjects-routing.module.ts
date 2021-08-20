@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncSubjectComponent } from './async-subject.component';
-import { SubjectRoutingPaths } from './subject-routing-paths';
-import { SubjectComponent } from './subject/subject.component';
-import { BehaviorSubjectComponent } from './subject/behavior-subject.component';
-import { ReplaySubjectComponent } from './subject/replay-subject.component';
+import { BehaviorSubjectComponent } from './behavior-subject.component';
+import { ReplaySubjectComponent } from './replay-subject.component';
+import { SubjectsRoutingPaths } from './subjects-routing-paths';
+import { SubjectComponent } from './subject.component';
 
 const routes: Routes = [
   {
-    path: SubjectRoutingPaths.subject,
+    path: SubjectsRoutingPaths.subject,
     component: SubjectComponent
   },
   {
-    path: SubjectRoutingPaths.async,
+    path: SubjectsRoutingPaths.async,
     component: AsyncSubjectComponent
   },
   {
-    path: SubjectRoutingPaths.behavior,
+    path: SubjectsRoutingPaths.behavior,
     component: BehaviorSubjectComponent
   },
   {
-    path: SubjectRoutingPaths.replay,
+    path: SubjectsRoutingPaths.replay,
     component: ReplaySubjectComponent
   }
 ];

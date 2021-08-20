@@ -1,1 +1,15 @@
-<p>child-nav works!</p>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{moduleName | titlecase}}</mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-nav-list>
+    <a
+      mat-list-item
+      *ngFor="let path of routingPaths | keyvalue"
+      [routerLink]="['/' + moduleName + '/' + path.value]"
+      routerLinkActive="router-link-active"
+    >
+      {{path.value}}
+    </a>
+  </mat-nav-list>
+</mat-expansion-panel>

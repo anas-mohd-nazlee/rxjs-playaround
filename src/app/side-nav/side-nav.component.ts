@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { SubjectRoutingPaths } from '../subjects/subject-routing-paths';
+import { ModuleRoutings } from '../routing-details';
 
 @Component({
   selector: 'app-side-nav',
@@ -8,7 +8,7 @@ import { SubjectRoutingPaths } from '../subjects/subject-routing-paths';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideNavComponent implements OnInit {
-  subjectRoutingPaths = SubjectRoutingPaths;
+  moduleRoutings = ModuleRoutings;
 
   constructor() { }
 

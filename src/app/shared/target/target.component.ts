@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
-import { loremIpsum } from 'lorem-ipsum';
+import { getLoremIpsum } from '../functions/get-lorem-ipsum';
 
 @Component({
   selector: 'app-target',
@@ -12,7 +12,7 @@ export class TargetComponent implements OnInit {
   textMessage = "";
 
   @Input()
-  targetLabel = "Target";
+  targetLabel = "Publisher";
 
   @Input()
   isTargetInitialized!: boolean;
@@ -41,7 +41,7 @@ export class TargetComponent implements OnInit {
   }
 
   onSendRandomMessage(): void {
-    const randomMsg = loremIpsum({count: 1, random: Math.random, units: "word"});
+    const randomMsg = getLoremIpsum();
     this.sendMessage.emit(randomMsg);
     this.logInfo(`Push Message: ${randomMsg}`);
   }

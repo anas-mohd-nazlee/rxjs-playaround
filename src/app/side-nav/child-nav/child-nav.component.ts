@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-child-nav',
@@ -7,6 +7,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChildNavComponent implements OnInit {
+
+  @Input()
+  routingPaths!: Record<string, string>;
+
+  @Input()
+  moduleName!: string;
 
   constructor() { }
 

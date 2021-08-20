@@ -9,6 +9,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ChildNavComponent } from './side-nav/child-nav/child-nav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ChildNavComponent } from './side-nav/child-nav/child-nav.component';
     BrowserAnimationsModule,
     MatExpansionModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

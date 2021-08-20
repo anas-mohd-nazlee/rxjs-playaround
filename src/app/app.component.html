@@ -1,10 +1,26 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" opened>
+  <mat-sidenav mode="side" opened #sidenav>
     <app-side-nav></app-side-nav>
   </mat-sidenav>
-  <mat-sidenav-content class="content-container">
-    <router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <div fxLayout="column" fxLayoutAlign="center stretch">
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="5px">
+            <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+              <mat-icon *ngIf="sidenav.opened">menu_open</mat-icon>
+            </button>
+            <img style="width: 2rem; height: 2rem; " src="../assets/RxJs_Logo_Black_Outline.svg" />
+            <span>RxJS PlayAround</span>
+            <span *ngIf="moduleName">&gt; {{moduleName | titlecase}}</span>
+            <span *ngIf="topicName">&gt; {{topicName }}</span>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <div class="content-container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-

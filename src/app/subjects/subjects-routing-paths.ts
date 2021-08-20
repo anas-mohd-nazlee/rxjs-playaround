@@ -1,4 +1,4 @@
-export const SubjectRoutingPaths: Record<string, string> = {
+export const SubjectsRoutingPaths: Record<string, string> = {
   subject: 'Subject',
   async: 'AsyncSubject',
   behavior: 'BehaviorSubject',

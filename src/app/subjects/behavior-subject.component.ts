@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { SubjectBase } from '../../shared/components/subject-base';
+import { SubjectBase } from '../shared/components/subject-base';
 
 @Component({
   templateUrl: './subject.component.html',
