@@ -23,5 +23,9 @@ export abstract class SubjectBase<TSubject extends Subject<any>> extends PlayGro
     this.subject$ = this.getNewSubject();
   }
 
+  onDisposeSubject(): void {
+    (this.subject$ as any) = undefined;
+  }
+
   protected abstract getNewSubject(): TSubject;
 }

@@ -26,7 +26,7 @@ export class SubscriberComponent implements OnInit, OnDestroy {
   subscription: EventEmitter<Subscription> = new EventEmitter();
 
   private readonly textResults: string[] = [];
-  private resultSub!: Subscription;
+  private readonly resultSub: Subscription = new Subscription();
 
   constructor(private cdr: ChangeDetectorRef) { }
 
@@ -34,11 +34,8 @@ export class SubscriberComponent implements OnInit, OnDestroy {
     return this.textResults.join("\n");
   }
 
-  get subscribeColor(): ThemePalette {
-    return this.isTargetInitialized ? undefined : "warn";
-  }
-
   ngOnInit(): void {
+    this.resultSub.add(() => this.updateTextResult("Teardown Executed"));
   }
 
   ngOnDestroy(): void {
@@ -50,18 +47,19 @@ export class SubscriberComponent implements OnInit, OnDestroy {
   }
 
   onSubscribeToTarget(): void {
-    this.updateTextResult("Subscribing to Target");
-    this.resultSub = this.target$?.subscribe(
-      value => this.updateTextResult(`Received: ${value}`),
+    this.updateTextResult("Subscribe");
+    const newSub = this.target$?.subscribe(
+      value => this.updateTextResult(`Next: ${value}`),
       error => this.updateTextResult(`Error: ${error}`),
-      () => this.updateTextResult("Observable Completed")
+      () => this.updateTextResult("Complete")
     );
 
-    this.resultSub.add(() => this.updateTextResult("Teardown Executed"));
+    this.resultSub.add(newSub);
+    this.subscription.emit(newSub);
   }
 
   onUnsubscribeTarget(): void {
-    this.updateTextResult("Unsubscribing to Target");
+    this.updateTextResult("Unsubscribe");
     this.resultSub?.unsubscribe();
   }
 

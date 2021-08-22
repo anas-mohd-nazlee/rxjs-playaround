@@ -1,16 +1,17 @@
-<div fxLayout="column" fxLayoutAlign="center">
-  <button mat-raised-button (click)="onAddSubscriber()">Add New Subscriber</button>
-  <button mat-button (click)="onUnsubscribeAll" color="accent">Unsubscribe All From Target</button>
-  <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="5px">
-    <app-subscriber
-      *ngFor="let subscriber of subscribers; index as i"
-      [target$]="target$"
-      [isTargetInitialized]="isTargetInitialized"
-      [subscriberLabel]="i"
-      (removeSubscriber)="onRemoveSubscriber(i)"
-      (subscription)="onChildSubscription($event)"
-      fxFlex="auto"
-    >
-    </app-subscriber>
+<!-- <div fxLayout="column" fxLayoutAlign="center">
+</div> -->
+<div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="5px">
+  <app-subscriber
+    *ngFor="let subscriber of subscribers; index as i"
+    [target$]="target$"
+    [isTargetInitialized]="isTargetInitialized"
+    [subscriberLabel]="i"
+    (removeSubscriber)="onRemoveSubscriber(i)"
+    fxFlex="auto"
+  >
+  </app-subscriber>
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <button mat-raised-button (click)="onAddSubscriber()">Add New Subscriber</button>
+    <button mat-stroked-button (click)="onRemoveAllSubsribers()">Remove All Subscribers</button>
   </div>
 </div>

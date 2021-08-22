@@ -24,7 +24,10 @@ export class TargetComponent implements OnInit {
   finishSubject: EventEmitter<void> = new EventEmitter();
 
   @Output()
-  reCreateSubject: EventEmitter<void> = new EventEmitter();
+  createSubject: EventEmitter<void> = new EventEmitter();
+
+  @Output()
+  disposeSubject: EventEmitter<void> = new EventEmitter();
 
   constructor(private cdr: ChangeDetectorRef) { }
 
@@ -35,15 +38,10 @@ export class TargetComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSendMessage(): void {
-    this.sendMessage.emit(this.textMessage);
-    this.logInfo(`Push Message: ${this.textMessage}`);
-  }
-
   onSendRandomMessage(): void {
     const randomMsg = getLoremIpsum();
     this.sendMessage.emit(randomMsg);
-    this.logInfo(`Push Message: ${randomMsg}`);
+    this.logInfo(`Next: ${randomMsg}`);
   }
 
   onFinishSubject(): void {
@@ -51,9 +49,14 @@ export class TargetComponent implements OnInit {
     this.logInfo("Complete Subject");
   }
 
-  onRecreateSubject(): void {
-    this.reCreateSubject.emit();
-    this.logInfo("Re-Initialize Subject");
+  onCreateSubject(): void {
+    this.createSubject.emit();
+    this.logInfo("Create Subject");
+  }
+
+  onDisposeSubject(): void {
+    this.disposeSubject.emit();
+    this.logInfo("Dispose Subject");
   }
 
   logInfo(log: string): void {

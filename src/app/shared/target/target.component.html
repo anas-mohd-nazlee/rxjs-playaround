@@ -1,18 +1,22 @@
-<div class="rounded-border" fxLayout="column" fxLayoutAlign="center stretch">
-  <h1>{{targetLabel}}</h1>
-  <mat-form-field class="full-width-form" appearance="outline">
-    <mat-label>Message</mat-label>
-    <input matInput type="text" [(ngModel)]="textMessage">
-    <button matSuffix mat-button (click)="onSendMessage()">
-      Send
-    </button>
-  </mat-form-field>
-  <button mat-button (click)="onSendRandomMessage()">Send Random Message</button>
-  <mat-form-field class="full-width-form" appearance="outline">
-    <mat-label>Target Log</mat-label>
-    <textarea matInput readonly style="height: 10vh">{{displayLog}}</textarea>
-  </mat-form-field>
-  <button *ngIf="isTargetInitialized" mat-button (click)="onFinishSubject()">Complete Subject</button>
-  <button *ngIf="!isTargetInitialized" mat-button (click)="onRecreateSubject()">Re-Initialize Subject</button>
-  <ng-content></ng-content>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{targetLabel}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="full-width-form" appearance="outline">
+      <mat-label>Target Log</mat-label>
+      <textarea matInput readonly style="height: 10vh">{{displayLog}}</textarea>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
+      <button mat-stroked-button (click)="onCreateSubject()">New</button>
+      <button mat-stroked-button (click)="onSendRandomMessage()">Next</button>
+      <button mat-stroked-button (click)="onFinishSubject()">Complete</button>
+      <button mat-stroked-button (click)="onDisposeSubject()">Dispose</button>
+    </div>
+    <div>
+      <ng-content selector="[actions]"></ng-content>
+    </div>
+  </mat-card-actions>
+</mat-card>

@@ -40,7 +40,7 @@ export class TapComponent extends SubjectBase<Subject<string>> implements OnInit
     this.targetComp.logInfo(`Setting Multicast to ${isMulticast}`);
     this.isMulticast = isMulticast;
     this.targetComp.onFinishSubject();
-    this.targetComp.onRecreateSubject();
+    this.targetComp.onCreateSubject();
   }
 
   onConnectObservable(): void {

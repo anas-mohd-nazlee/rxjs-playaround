@@ -22,6 +22,7 @@ export class SubscriberParentComponent implements OnInit {
 
   ngOnInit(): void {
     this.onAddSubscriber();
+    this.allSub.add(() => console.log("all unsubscribed"));
   }
 
   onAddSubscriber(): void {
@@ -34,11 +35,7 @@ export class SubscriberParentComponent implements OnInit {
     this.cdr.detectChanges();
   }
 
-  onChildSubscription(sub: Subscription): void {
-    this.allSub.add(sub);
-  }
-
-  onUnsubscribeAll(): void {
-    this.allSub.unsubscribe();
+  onRemoveAllSubsribers(): void {
+    this.subscribers = [];
   }
 }

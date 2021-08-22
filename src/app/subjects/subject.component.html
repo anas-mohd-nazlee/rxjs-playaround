@@ -1,9 +1,10 @@
-<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
   <app-target
     [isTargetInitialized]="isTargetInitialized"
     (sendMessage)="onPushMessage($event)"
     (finishSubject)="onCompleteSubject()"
-    (reCreateSubject)="onCreateSubject()"
+    (createSubject)="onCreateSubject()"
+    (disposeSubject)="onDisposeSubject()"
   >
   </app-target>
   <app-subscriber-parent
