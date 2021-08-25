@@ -54,7 +54,7 @@ export class TapComponent extends SubjectBase<Subject<string>> implements OnInit
     this.subs.unsubscribe();
   }
 
-  override onCreateSubject(): void {
+  onCreateSubject(): void {
     super.onCreateSubject();
     this.setTapDemo();
   }
