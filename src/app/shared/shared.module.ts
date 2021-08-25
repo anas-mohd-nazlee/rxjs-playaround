@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
-import { AgGridModule } from 'ag-grid-angular';
 import { SubscriberComponent } from './subscriber/subscriber.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SubscriberParentComponent } from './subscriber-parent/subscriber-parent.component';
