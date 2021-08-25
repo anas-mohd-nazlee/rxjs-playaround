@@ -2,16 +2,16 @@
 </div> -->
 <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="5px">
   <app-subscriber
-    *ngFor="let subscriber of subscribers; index as i"
+    *ngFor="let id of subscriberIds"
     [target$]="target$"
     [isTargetInitialized]="isTargetInitialized"
-    [subscriberLabel]="i"
-    (removeSubscriber)="onRemoveSubscriber(i)"
+    [subscriberLabel]="id"
+    (removeSubscriber)="onRemoveSubscriber(id)"
     fxFlex="auto"
   >
   </app-subscriber>
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <button mat-raised-button (click)="onAddSubscriber()">Add New Subscriber</button>
-    <button mat-stroked-button (click)="onRemoveAllSubsribers()">Remove All Subscribers</button>
+    <button mat-stroked-button (click)="onRemoveAllSubscribers()">Remove All Subscribers</button>
   </div>
 </div>

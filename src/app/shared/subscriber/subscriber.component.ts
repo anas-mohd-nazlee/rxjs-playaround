@@ -22,9 +22,6 @@ export class SubscriberComponent implements OnInit, OnDestroy {
   @Output()
   removeSubscriber: EventEmitter<void> = new EventEmitter();
 
-  @Output()
-  subscription: EventEmitter<Subscription> = new EventEmitter();
-
   private readonly textResults: string[] = [];
   private readonly resultSub: Subscription = new Subscription();
 
@@ -39,7 +36,7 @@ export class SubscriberComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.onUnsubscribeTarget();
+    this.resultSub.unsubscribe();
   }
 
   onRemoveSubscriber(): void {
@@ -55,12 +52,6 @@ export class SubscriberComponent implements OnInit, OnDestroy {
     );
 
     this.resultSub.add(newSub);
-    this.subscription.emit(newSub);
-  }
-
-  onUnsubscribeTarget(): void {
-    this.updateTextResult("Unsubscribe");
-    this.resultSub?.unsubscribe();
   }
 
   private updateTextResult(text: string): void {

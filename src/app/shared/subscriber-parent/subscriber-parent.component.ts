@@ -9,8 +9,8 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class SubscriberParentComponent implements OnInit {
 
-  private readonly allSub: Subscription = new Subscription();
-  subscribers: number[] = []
+  private subscriberId = 0;
+  subscriberIds: number[] = []
 
   @Input()
   target$!: Observable<string>;
@@ -22,20 +22,20 @@ export class SubscriberParentComponent implements OnInit {
 
   ngOnInit(): void {
     this.onAddSubscriber();
-    this.allSub.add(() => console.log("all unsubscribed"));
   }
 
   onAddSubscriber(): void {
-    this.subscribers.push(Date.now());
+    this.subscriberIds.push(this.subscriberId);
+    this.subscriberId++;
     this.cdr.detectChanges();
   }
 
   onRemoveSubscriber(subId: number): void {
-    this.subscribers.splice(subId, 1);
+    this.subscriberIds.splice(subId, 1);
     this.cdr.detectChanges();
   }
 
-  onRemoveAllSubsribers(): void {
-    this.subscribers = [];
+  onRemoveAllSubscribers(): void {
+    this.subscriberIds = [];
   }
 }
