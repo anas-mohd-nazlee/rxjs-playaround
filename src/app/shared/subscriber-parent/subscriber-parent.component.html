@@ -4,7 +4,6 @@
   <app-subscriber
     *ngFor="let id of subscriberIds"
     [target$]="target$"
-    [isTargetInitialized]="isTargetInitialized"
     [subscriberLabel]="id"
     (removeSubscriber)="onRemoveSubscriber(id)"
     fxFlex="auto"

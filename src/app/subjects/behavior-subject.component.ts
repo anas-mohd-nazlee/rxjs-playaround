@@ -3,10 +3,14 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { SubjectBase } from '../shared/components/subject-base';
 
 @Component({
-  templateUrl: './subject.component.html',
+  templateUrl: './behavior-subject.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BehaviorSubjectComponent extends SubjectBase<Subject<string>> implements OnInit {
+
+  targetLabel = "Behavior Subject";
+  description = "Requires an initial value and emits its current value (last emitted item) to new subscribers.";
+  initialValue = "Hello World";
 
   constructor() {
     super();
@@ -21,6 +25,6 @@ export class BehaviorSubjectComponent extends SubjectBase<Subject<string>> imple
   }
 
   protected getNewSubject(): Subject<string> {
-    return new BehaviorSubject("Hello World");
+    return new BehaviorSubject(this.initialValue);
   }
 }

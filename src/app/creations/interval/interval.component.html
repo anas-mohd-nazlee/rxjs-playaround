@@ -1,0 +1,10 @@
+<app-base-creation [targetLabel]="'Interval'"
+  [description]="'Emit numbers in sequence based on provided timeframe.'"
+  [target$]="target$">
+  <div content>
+    <mat-form-field class="full-width-form" appearance="outline">
+      <mat-label>Interval Period (ms)</mat-label>
+      <input matInput type="number" [(ngModel)]="period">
+    </mat-form-field>
+  </div>
+</app-base-creation>

@@ -6,13 +6,21 @@ import { SharedModule } from '../shared/shared.module';
 import { OfComponent } from './of/of.component';
 import { EmptyComponent } from './empty/empty.component';
 import { FromComponent } from './from/from.component';
+import { DeferComponent } from './defer/defer.component';
+import { BaseCreationComponent } from './base-creation/base-creation.component';
+import { IntervalComponent } from './interval/interval.component';
+import { TimerComponent } from './timer/timer.component';
 
 
 @NgModule({
   declarations: [
     OfComponent,
     EmptyComponent,
-    FromComponent
+    FromComponent,
+    DeferComponent,
+    BaseCreationComponent,
+    IntervalComponent,
+    TimerComponent
   ],
   imports: [
     CommonModule,

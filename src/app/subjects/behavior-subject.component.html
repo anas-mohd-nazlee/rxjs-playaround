@@ -8,6 +8,12 @@
     (createSubject)="onCreateSubject()"
     (disposeSubject)="onDisposeSubject()"
   >
+    <div content fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field class="full-width-form" appearance="outline">
+        <mat-label>Initial Value</mat-label>
+        <input matInput type="text" [(ngModel)]="initialValue">
+      </mat-form-field>
+    </div>
   </app-target>
   <app-subscriber-parent
     [target$]="target$"

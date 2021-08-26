@@ -6,12 +6,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SubscriberParentComponent } from './subscriber-parent/subscriber-parent.component';
 import { FormsModule } from '@angular/forms';
 import { TargetComponent } from './target/target.component';
+import { CardWithNoButtonComponent } from './components/card-with-no-button/card-with-no-button.component';
 
 @NgModule({
   declarations: [
     SubscriberComponent,
     SubscriberParentComponent,
-    TargetComponent
+    TargetComponent,
+    CardWithNoButtonComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { TargetComponent } from './target/target.component';
     FlexLayoutModule,
     SubscriberParentComponent,
     FormsModule,
-    TargetComponent
+    TargetComponent,
+    CardWithNoButtonComponent
   ]
 })
 export class SharedModule { }

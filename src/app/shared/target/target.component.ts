@@ -17,6 +17,9 @@ export class TargetComponent implements OnInit {
   @Input()
   isTargetInitialized!: boolean;
 
+  @Input()
+  description = "";
+
   @Output()
   sendMessage: EventEmitter<string> = new EventEmitter();
 

@@ -1,0 +1,12 @@
+<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
+  <app-card-with-no-button
+    [targetLabel]="targetLabel"
+    [description]="description">
+    <div content>
+      <ng-content select="[content]">
+      </ng-content>
+    </div>
+  </app-card-with-no-button>
+  <app-subscriber-parent [target$]="target$">
+  </app-subscriber-parent>
+</div>

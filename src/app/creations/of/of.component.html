@@ -1,11 +1,10 @@
-<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
-  <div class="rounded-border" fxLayout="column" fxLayoutAlign="center stretch">
-    <h1>Publisher</h1>
+<app-base-creation [targetLabel]="'Of'"
+  [description]="'Emit variable amount of values in a sequence and then emits a complete notification.'"
+  [target$]="target$">
+  <div content>
     <mat-form-field class="full-width-form" appearance="outline">
       <mat-label>Number of Sequence</mat-label>
       <input matInput type="number" [(ngModel)]="wordCount">
     </mat-form-field>
   </div>
-  <app-subscriber-parent [target$]="target$" [isTargetInitialized]="isTargetInitialized">
-  </app-subscriber-parent>
-</div>
+</app-base-creation>

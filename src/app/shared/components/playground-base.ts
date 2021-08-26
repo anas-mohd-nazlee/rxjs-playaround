@@ -6,5 +6,5 @@ export abstract class PlayGroundBase {
 
   constructor() { }
 
-  abstract get target$(): Observable<string>;
+  abstract get target$(): Observable<any>;
 }

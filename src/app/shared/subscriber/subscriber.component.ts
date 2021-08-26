@@ -11,10 +11,7 @@ import { Observable, Subscription } from 'rxjs';
 export class SubscriberComponent implements OnInit, OnDestroy {
 
   @Input()
-  target$!: Observable<string>;
-
-  @Input()
-  isTargetInitialized!: boolean;
+  target$!: Observable<any>;
 
   @Input()
   subscriberLabel!: number;
@@ -23,7 +20,7 @@ export class SubscriberComponent implements OnInit, OnDestroy {
   removeSubscriber: EventEmitter<void> = new EventEmitter();
 
   private readonly textResults: string[] = [];
-  private readonly resultSub: Subscription = new Subscription();
+  private resultSub!: Subscription;
 
   constructor(private cdr: ChangeDetectorRef) { }
 
@@ -32,11 +29,10 @@ export class SubscriberComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.resultSub.add(() => this.updateTextResult("Teardown Executed"));
   }
 
   ngOnDestroy(): void {
-    this.resultSub.unsubscribe();
+    this.resultSub?.unsubscribe();
   }
 
   onRemoveSubscriber(): void {
@@ -45,13 +41,17 @@ export class SubscriberComponent implements OnInit, OnDestroy {
 
   onSubscribeToTarget(): void {
     this.updateTextResult("Subscribe");
-    const newSub = this.target$?.subscribe(
+    this.resultSub = this.target$?.subscribe(
       value => this.updateTextResult(`Next: ${value}`),
       error => this.updateTextResult(`Error: ${error}`),
       () => this.updateTextResult("Complete")
     );
+  }
 
-    this.resultSub.add(newSub);
+  onUnsubscribeTarget(): void {
+    this.resultSub?.add(() => this.updateTextResult("Teardown Executed"));
+    this.updateTextResult("UnSubscribe");
+    this.resultSub?.unsubscribe();
   }
 
   private updateTextResult(text: string): void {

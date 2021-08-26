@@ -1,13 +1,12 @@
-<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
-  <div class="rounded-border" fxLayout="column" fxLayoutAlign="center stretch">
-    <h1>Publisher</h1>
-    <label>Select a "From" type:</label>
-    <mat-radio-group [(ngModel)]="fromType" class="radio-group">
-      <mat-radio-button class="radio-button" *ngFor="let type of fromTypes | keyvalue" [value]="type.value">
-        {{type.value}}
-      </mat-radio-button>
-    </mat-radio-group>
+<app-base-creation [targetLabel]="'From'"
+  [description]="'Turn an array, promise, or iterable into an observable.'"
+  [target$]="target$">
+  <div content>
+      <label>Select a "From" type:</label>
+      <mat-radio-group [(ngModel)]="fromType" class="radio-group">
+        <mat-radio-button class="radio-button" *ngFor="let type of fromTypes | keyvalue" [value]="type.value">
+          {{type.value}}
+        </mat-radio-button>
+      </mat-radio-group>
   </div>
-  <app-subscriber-parent [target$]="target$" [isTargetInitialized]="isTargetInitialized">
-  </app-subscriber-parent>
-</div>
+</app-base-creation>

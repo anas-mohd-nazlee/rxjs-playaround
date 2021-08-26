@@ -13,10 +13,7 @@ export class SubscriberParentComponent implements OnInit {
   subscriberIds: number[] = []
 
   @Input()
-  target$!: Observable<string>;
-
-  @Input()
-  isTargetInitialized!: boolean;
+  target$!: Observable<any>;
 
   constructor(private cdr: ChangeDetectorRef) { }
 

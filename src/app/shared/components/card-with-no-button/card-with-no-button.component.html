@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{targetLabel}}</mat-card-title>
+    <mat-card-subtitle>{{description}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-content select="[content]"></ng-content>
+  </mat-card-content>
+</mat-card>

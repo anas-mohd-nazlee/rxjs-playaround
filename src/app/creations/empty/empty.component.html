@@ -1,11 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
-  <div class="rounded-border" fxLayout="column" fxLayoutAlign="center stretch">
-    <h1>Publisher</h1>
-    <span>This is an EMPTY observable...</span>
-  </div>
-  <app-subscriber-parent
-    [target$]="target$"
-    [isTargetInitialized]="isTargetInitialized"
-  >
-  </app-subscriber-parent>
-</div>
+<app-base-creation [targetLabel]="'Empty'"
+  [description]="'Observable that immediately completes.'"
+  [target$]="target$">
+</app-base-creation>

@@ -1,12 +1,16 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>{{targetLabel}}</mat-card-title>
+    <mat-card-subtitle>{{description}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <mat-form-field class="full-width-form" appearance="outline">
       <mat-label>Target Log</mat-label>
       <textarea matInput readonly style="height: 10vh">{{displayLog}}</textarea>
     </mat-form-field>
+    <div>
+      <ng-content select="[content]"></ng-content>
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
@@ -16,7 +20,7 @@
       <button mat-stroked-button (click)="onDisposeSubject()">Dispose</button>
     </div>
     <div>
-      <ng-content selector="[actions]"></ng-content>
+      <ng-content select="[action]"></ng-content>
     </div>
   </mat-card-actions>
 </mat-card>

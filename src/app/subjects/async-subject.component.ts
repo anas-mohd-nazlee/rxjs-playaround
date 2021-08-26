@@ -8,6 +8,9 @@ import { SubjectBase } from '../shared/components/subject-base';
 })
 export class AsyncSubjectComponent extends SubjectBase<Subject<string>> implements OnInit {
 
+  targetLabel = "Async Subject";
+  description = "Emits latest value to observers upon completion";
+
   constructor() {
     super();
   }

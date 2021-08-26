@@ -1,0 +1,13 @@
+<app-base-creation [targetLabel]="'Timer'"
+  [description]="'After given duration, emit numbers in sequence every specified duration.'" [target$]="target$">
+  <div content fxLayout="row" fxLayoutGap="5px">
+    <mat-form-field class="full-width-form" appearance="outline">
+      <mat-label>Initial Delay</mat-label>
+      <input matInput type="number" [(ngModel)]="initialDelay">
+    </mat-form-field>
+    <mat-form-field class="full-width-form" appearance="outline">
+      <mat-label>Interval Period</mat-label>
+      <input matInput type="number" [(ngModel)]="period">
+    </mat-form-field>
+  </div>
+</app-base-creation>

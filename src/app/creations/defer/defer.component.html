@@ -1,0 +1,7 @@
+<app-base-creation [targetLabel]="'Defer'"
+  [description]="'Creates an Observable that, on subscribe, calls an Observable factory to make an Observable for each new Observer.'"
+  [target$]="target$">
+  <div content>
+    <mat-slide-toggle [(ngModel)]="isDeferred">Defer Observable: {{isDeferred}}</mat-slide-toggle>
+  </div>
+</app-base-creation>

@@ -8,6 +8,9 @@ import { SubjectBase } from '../shared/components/subject-base';
 })
 export class SubjectComponent extends SubjectBase<Subject<string>> implements OnInit {
 
+  targetLabel = "Subject";
+  description = "No initial value or replay behavior.";
+
   constructor() {
     super();
   }
