@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewChild, OnDestroy } from
 import { ConnectableObservable, Observable, Subject, Subscription, timer } from 'rxjs';
 import { multicast, tap } from 'rxjs/operators';
 import { SubjectBase } from '../../shared/components/subject-base';
-import { TargetComponent } from '../../shared/target/target.component';
+import { TargetComponent } from '../../shared/components/target/target.component';
 
 @Component({
   selector: 'app-tap',

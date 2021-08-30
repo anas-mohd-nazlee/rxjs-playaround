@@ -19,7 +19,6 @@ export class EmptyComponent extends PlayGroundBase implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isTargetInitialized = true;
   }
 
 }

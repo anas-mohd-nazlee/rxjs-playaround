@@ -22,7 +22,6 @@ export class OfComponent extends PlayGroundBase implements OnInit {
   }
 
   ngOnInit(): void {
-    super.isTargetInitialized = true;
   }
 
 }

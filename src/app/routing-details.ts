@@ -1,3 +1,4 @@
+import { CombinationsRoutingPaths } from "./combination/combinations-routing-paths";
 import { CreationsRoutingPaths } from "./creations/creations-routing-paths";
 import { SubjectsRoutingPaths } from "./subjects/subjects-routing-paths";
 import { UtilitiesRoutingPaths } from "./utilities/utilities-routing-paths";
@@ -18,5 +19,6 @@ export interface ModuleRouting {
 export const ModuleRoutings: ModuleRouting[] = [
   { moduleName: 'subjects', routingPaths: SubjectsRoutingPaths },
   { moduleName: 'creations', routingPaths: CreationsRoutingPaths },
-  { moduleName: 'utilities', routingPaths: UtilitiesRoutingPaths }
+  { moduleName: 'utilities', routingPaths: UtilitiesRoutingPaths },
+  { moduleName: 'combinations', routingPaths: CombinationsRoutingPaths }
 ]

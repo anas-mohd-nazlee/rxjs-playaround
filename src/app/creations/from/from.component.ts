@@ -38,7 +38,6 @@ export class FromComponent extends PlayGroundBase implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isTargetInitialized = true;
   }
 
   private async getWordInPromise(): Promise<string> {

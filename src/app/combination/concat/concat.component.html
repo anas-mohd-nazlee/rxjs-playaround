@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  <app-card-with-no-button
+    [targetLabel]="'Merge'"
+    [description]="'Turn multiple observables into a single observable.'"
+  >
+  </app-card-with-no-button>
+  <app-target-parent
+    [initialPublisherCount]="2"
+    (currentPublishers)="onPublishersChange($event)"
+  >
+  </app-target-parent>
+  <app-subscriber-parent
+    [target$]="target$"
+  >
+  </app-subscriber-parent>
+</div>

@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'utilities',
     loadChildren: () => import('./utilities/utilities.module').then(m => m.UtilitiesModule)
+  },
+  {
+    path: 'combinations',
+    loadChildren: () => import('./combination/combinations.module').then(m => m.CombinationsModule)
   }
 ];
 

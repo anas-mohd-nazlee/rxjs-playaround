@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
-import { getLoremIpsum } from '../functions/get-lorem-ipsum';
+import { getLoremIpsum } from '../../functions/get-lorem-ipsum';
 
 @Component({
   selector: 'app-target',
@@ -15,10 +15,10 @@ export class TargetComponent implements OnInit {
   targetLabel = "Publisher";
 
   @Input()
-  isTargetInitialized!: boolean;
+  description = "";
 
   @Input()
-  description = "";
+  isRemovable = false;
 
   @Output()
   sendMessage: EventEmitter<string> = new EventEmitter();
@@ -32,6 +32,9 @@ export class TargetComponent implements OnInit {
   @Output()
   disposeSubject: EventEmitter<void> = new EventEmitter();
 
+  @Output()
+  removePublisher: EventEmitter<void> = new EventEmitter();
+
   constructor(private cdr: ChangeDetectorRef) { }
 
   get displayLog(): string {
@@ -39,6 +42,7 @@ export class TargetComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.onCreateSubject();
   }
 
   onSendRandomMessage(): void {
@@ -60,6 +64,10 @@ export class TargetComponent implements OnInit {
   onDisposeSubject(): void {
     this.disposeSubject.emit();
     this.logInfo("Dispose Subject");
+  }
+
+  onRemovePublisher(): void {
+    this.removePublisher.emit();
   }
 
   logInfo(log: string): void {

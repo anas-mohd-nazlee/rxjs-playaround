@@ -1,7 +1,10 @@
 <mat-card>
-  <mat-card-header>
-    <mat-card-title>{{targetLabel}}</mat-card-title>
-    <mat-card-subtitle>{{description}}</mat-card-subtitle>
+  <mat-card-header fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex="90">
+      <mat-card-title>{{targetLabel}}</mat-card-title>
+      <mat-card-subtitle>{{description}}</mat-card-subtitle>
+    </div>
+    <button *ngIf="isRemovable" mat-icon-button color="warn" (click)="onRemovePublisher()"><mat-icon>clear</mat-icon></button>
   </mat-card-header>
   <mat-card-content>
     <mat-form-field class="full-width-form" appearance="outline">

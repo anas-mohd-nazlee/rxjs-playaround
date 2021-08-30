@@ -10,21 +10,19 @@ export abstract class SubjectBase<TSubject extends Subject<any>> extends PlayGro
   }
 
   onPushMessage(message: string): void {
-    this.subject$.next(message);
+    this.subject$?.next(message);
   }
 
   onCompleteSubject(): void {
-    this.subject$.complete();
-    this.isTargetInitialized = false;
+    this.subject$?.complete();
   }
 
   onCreateSubject(): void {
-    this.isTargetInitialized = true;
     this.subject$ = this.getNewSubject();
   }
 
   onDisposeSubject(): void {
-    (this.subject$ as any) = undefined;
+    this.subject$ = undefined as any;
   }
 
   protected abstract getNewSubject(): TSubject;
