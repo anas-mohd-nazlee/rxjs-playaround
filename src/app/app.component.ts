@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
   title = 'rxjs-playaround';
   moduleName = "";
   topicName = "";
+  isSideNavOpened = true;
 
   constructor(private router: Router) {
   }

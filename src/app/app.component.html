@@ -2,8 +2,8 @@
   <mat-toolbar-row class="mat-elevation-z8">
     <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="5px">
       <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
-        <mat-icon *ngIf="sidenav.opened">menu_open</mat-icon>
+        <mat-icon *ngIf="!isSideNavOpened">menu</mat-icon>
+        <mat-icon *ngIf="isSideNavOpened">menu_open</mat-icon>
       </button>
       <img style="width: 2rem; height: 2rem; " src="../assets/RxJs_Logo_Black_Outline.svg" />
       <span>RxJS PlayAround</span>
@@ -13,7 +13,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container [hasBackdrop]="false">
-  <mat-sidenav #sidenav class="mat-elevation-z8" mode="push" opened>
+  <mat-sidenav #sidenav class="mat-elevation-z8" mode="push" [(opened)]="isSideNavOpened">
     <app-side-nav></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content style="margin: 16px; padding-left: 2rem;">
