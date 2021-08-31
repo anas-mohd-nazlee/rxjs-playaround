@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
   <app-target
-    [targetLabel]="'Tap'"
-    [description]="'Transparently perform actions or side-effects, such as logging.'"
+    [targetLabel]="'Repeat'"
+    [description]="'Repeats an observable on completion.'"
     (sendMessage)="onPushMessage($event)"
     (finishSubject)="onCompleteSubject()"
     (createSubject)="onCreateSubject()"
@@ -9,8 +9,8 @@
   >
     <div content fxLayout="row" fxLayoutGap="5px">
       <mat-form-field class="full-width-form" appearance="outline">
-        <mat-label>Tap Message</mat-label>
-        <input matInput type="text" [(ngModel)]="tapMsg">
+        <mat-label>Repeat Count</mat-label>
+        <input matInput type="number" [(ngModel)]="repeatCount">
       </mat-form-field>
     </div>
   </app-target>
@@ -19,4 +19,3 @@
   >
   </app-subscriber-parent>
 </div>
-
