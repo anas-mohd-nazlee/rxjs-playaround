@@ -8,6 +8,7 @@ import { EndWithComponent } from './end-with/end-with.component';
 import { PairwiseComponent } from './pairwise/pairwise.component';
 import { MergeComponent } from './merge/merge.component';
 import { ConcatComponent } from './concat/concat.component';
+import { ForkJoinComponent } from './fork-join/fork-join.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ConcatComponent } from './concat/concat.component';
     EndWithComponent,
     PairwiseComponent,
     MergeComponent,
-    ConcatComponent
+    ConcatComponent,
+    ForkJoinComponent
   ],
   imports: [
     CommonModule,

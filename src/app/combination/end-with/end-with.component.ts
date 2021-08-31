@@ -11,7 +11,7 @@ import { SubjectBase } from '../../shared/components/subject-base';
 export class EndWithComponent extends SubjectBase<Subject<string>> implements OnInit {
 
   targetLabel = 'EndWith';
-  description = '';
+  description = 'Emit given value(s) on completion';
   endWithValue = 'END OF LINE';
 
   constructor() {

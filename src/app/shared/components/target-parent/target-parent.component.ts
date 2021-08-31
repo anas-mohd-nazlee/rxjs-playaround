@@ -44,7 +44,7 @@ export class TargetParentComponent implements OnInit {
   }
 
   onPushMessage(id: number, message: string): void {
-    this.subjects$[id]?.next(message);
+    this.subjects$[id]?.next(`[${id}] - ${message}`);
   }
 
   onCompleteSubject(id: number): void {

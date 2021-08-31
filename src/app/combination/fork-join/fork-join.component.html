@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
   <app-card-with-no-button
-    [targetLabel]="'Concat'"
-    [description]="'Subscribe to observables in order as previous completes'"
+    [targetLabel]="'ForkJoin'"
+    [description]="'When all observables complete, emit the last emitted value from each.'"
   >
   </app-card-with-no-button>
   <app-target-parent
@@ -14,3 +14,4 @@
   >
   </app-subscriber-parent>
 </div>
+
