@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import pkgDep from 'package.json';
 
 @Component({
   templateUrl: './home.component.html',
@@ -7,8 +6,8 @@ import pkgDep from 'package.json';
 })
 export class HomeComponent implements OnInit {
 
-  angularVersion = pkgDep.dependencies['@angular/core'];
-  rxjsVersion = pkgDep.dependencies.rxjs;
+  angularVersion = "12.1.0";
+  rxjsVersion = "6.6.0";
 
   constructor() { }
 
