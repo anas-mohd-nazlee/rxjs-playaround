@@ -1,14 +1,20 @@
 <mat-toolbar>
   <mat-toolbar-row class="mat-elevation-z8">
-    <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="5px">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon *ngIf="!isSideNavOpened">menu</mat-icon>
         <mat-icon *ngIf="isSideNavOpened">menu_open</mat-icon>
       </button>
-      <img style="width: 2rem; height: 2rem; " src="../assets/RxJs_Logo_Black_Outline.svg" />
-      <span>RxJS PlayAround</span>
-      <span *ngIf="moduleName">&gt; {{moduleName | titlecase}}</span>
-      <span *ngIf="topicName">&gt; {{topicName }}</span>
+      <a mat-button style="font-size: 1em !important; padding: 0 !important;" [routerLink]="['/']">
+        <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px">
+          <img style="width: 2em; height: 2em; " src="../assets/RxJs_Logo_Black_Outline.svg" />
+          <span>RxJS PlayAround</span>
+        </div>
+      </a>
+      <span *ngIf="moduleName">&gt;</span>
+      <span *ngIf="moduleName">{{moduleName | titlecase}}</span>
+      <span *ngIf="topicName">&gt;</span>
+      <span *ngIf="topicName">{{topicName }}</span>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

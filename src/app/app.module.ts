@@ -13,12 +13,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { HomeComponent } from './home/home.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     ChildNavComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     FlexLayoutModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
