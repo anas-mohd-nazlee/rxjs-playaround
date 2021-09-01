@@ -1,0 +1,21 @@
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  <app-target
+    [targetLabel]="'Take'"
+    [description]="'Emit provided number of values before completing.'"
+    (sendMessage)="onPushMessage($event)"
+    (finishSubject)="onCompleteSubject()"
+    (createSubject)="onCreateSubject()"
+    (disposeSubject)="onDisposeSubject()"
+  >
+    <div content fxLayout="column" fxLayoutGap="5px">
+      <mat-form-field class="full-width-form" appearance="outline">
+        <mat-label>Take Count</mat-label>
+        <input matInput type="number" [(ngModel)]="takeCount">
+      </mat-form-field>
+    </div>
+  </app-target>
+  <app-subscriber-parent
+    [target$]="target$"
+  >
+  </app-subscriber-parent>
+</div>

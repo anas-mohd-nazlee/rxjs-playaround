@@ -19,11 +19,11 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container [hasBackdrop]="false">
-  <mat-sidenav #sidenav class="mat-elevation-z8" mode="push" [(opened)]="isSideNavOpened">
+  <mat-sidenav #sidenav class="mat-elevation-z8" mode="side" [(opened)]="isSideNavOpened">
     <app-side-nav></app-side-nav>
   </mat-sidenav>
-  <mat-sidenav-content style="margin: 16px; padding-left: 2rem;">
-    <div fxLayout="row wrap" fxLayoutAlign="start center">
+  <mat-sidenav-content style="margin: 1rem; padding-left: 2rem;">
+    <div fxLayout="row wrap" fxLayoutAlign="start center" style="margin-bottom: 2rem;">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

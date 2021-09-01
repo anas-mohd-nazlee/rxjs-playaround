@@ -1,0 +1,22 @@
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  <app-target
+    [targetLabel]="'Filter'"
+    [description]="'Emit values that pass the provided condition.'"
+    (sendMessage)="onPushMessage($event)"
+    (finishSubject)="onCompleteSubject()"
+    (createSubject)="onCreateSubject()"
+    (disposeSubject)="onDisposeSubject()"
+  >
+    <div content fxLayout="column" fxLayoutGap="5px">
+      <mat-slide-toggle [(ngModel)]="canFilter">Enable Filter: {{canFilter}}</mat-slide-toggle>
+      <mat-form-field class="full-width-form" appearance="outline">
+        <mat-label>Alphabet Filter</mat-label>
+        <input matInput type="text" minlength="1" maxlength="1" [(ngModel)]="alphabetToFilter">
+      </mat-form-field>
+    </div>
+  </app-target>
+  <app-subscriber-parent
+    [target$]="target$"
+  >
+  </app-subscriber-parent>
+</div>

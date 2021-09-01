@@ -12,6 +12,12 @@ export class TargetParentComponent implements OnInit {
   @Input()
   initialPublisherCount = 1;
 
+  @Input()
+  canAddPublisher = true;
+
+  @Input()
+  customPublisherNames: string[] = [];
+
   @Output()
   currentPublishers: EventEmitter<Observable<string>[]> = new EventEmitter();
 
@@ -57,5 +63,9 @@ export class TargetParentComponent implements OnInit {
 
   onDisposeSubject(id: number): void {
     this.subjects$[id] = undefined as any;
+  }
+
+  getPublisherName(id: number): string {
+    return this.customPublisherNames[id] ?? `Publisher #${id}`;
   }
 }

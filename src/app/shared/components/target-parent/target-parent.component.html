@@ -1,8 +1,8 @@
 <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="5px">
   <div *ngFor="let id of publishers">
     <app-target
-      [targetLabel]="'Publisher #' + id"
-      [isRemovable]="true"
+      [targetLabel]="getPublisherName(id)"
+      [isRemovable]="canAddPublisher"
       (sendMessage)="onPushMessage(id, $event)"
       (finishSubject)="onCompleteSubject(id)"
       (createSubject)="onCreateSubject(id)"
@@ -14,7 +14,7 @@
       </div> -->
     </app-target>
   </div>
-  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" *ngIf="canAddPublisher">
     <button mat-raised-button (click)="onNewPublisher()">Add New Publisher</button>
     <button mat-stroked-button (click)="onRemoveAllPublishers()">Remove All Publishers</button>
   </div>

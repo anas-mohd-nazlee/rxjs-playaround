@@ -35,6 +35,8 @@ export class TargetComponent implements OnInit {
   @Output()
   removePublisher: EventEmitter<void> = new EventEmitter();
 
+  generateRandomMessage: () => string = () => getLoremIpsum();
+
   constructor(private cdr: ChangeDetectorRef) { }
 
   get displayLog(): string {
@@ -46,7 +48,7 @@ export class TargetComponent implements OnInit {
   }
 
   onSendRandomMessage(): void {
-    const randomMsg = getLoremIpsum();
+    const randomMsg = this.generateRandomMessage();
     this.sendMessage.emit(randomMsg);
     this.logInfo(`Next: ${randomMsg}`);
   }

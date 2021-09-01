@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'combinations',
     loadChildren: () => import('./combination/combinations.module').then(m => m.CombinationsModule)
+  },
+  {
+    path: 'filtering',
+    loadChildren: () => import('./filtering/filtering.module').then(m => m.FilteringModule)
   }
 ];
 
