@@ -1,0 +1,18 @@
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  <app-card-with-no-button
+    [targetLabel]="'MergeMap'"
+    [description]="'Map to observable, emit values.'"
+  >
+  </app-card-with-no-button>
+  <app-target-parent
+    [initialPublisherCount]="2"
+    [canAddPublisher]="false"
+    [customPublisherNames]="publisherNames"
+    (currentPublishers)="onPublishersChange($event)"
+  >
+  </app-target-parent>
+  <app-subscriber-parent
+    [target$]="target$"
+  >
+  </app-subscriber-parent>
+</div>

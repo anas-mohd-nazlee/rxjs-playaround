@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  <app-card-with-no-button
+    [targetLabel]="'SwitchMap'"
+    [description]="'Map to observable, complete previous inner observable, emit values.'"
+  >
+    <mat-form-field content>
+      <mat-label>Selected Publisher</mat-label>
+      <mat-select [(ngModel)]="selectedSource">
+        <mat-option *ngFor="let id of sourceIndices" [value]="id">
+          {{id}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </app-card-with-no-button>
+  <app-target-parent
+    [initialPublisherCount]="2"
+    (currentPublishers)="onPublishersChange($event)"
+  >
+  </app-target-parent>
+  <app-subscriber-parent
+    [target$]="target$"
+  >
+  </app-subscriber-parent>
+</div>

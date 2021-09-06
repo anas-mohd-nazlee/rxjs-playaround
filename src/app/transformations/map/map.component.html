@@ -1,0 +1,15 @@
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  <app-target
+    [targetLabel]="'Map'"
+    [description]="'Apply projection with each value from source.'"
+    (sendMessage)="onPushMessage($event)"
+    (finishSubject)="onCompleteSubject()"
+    (createSubject)="onCreateSubject()"
+    (disposeSubject)="onDisposeSubject()"
+  >
+  </app-target>
+  <app-subscriber-parent
+    [target$]="target$"
+  >
+  </app-subscriber-parent>
+</div>

@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'filtering',
     loadChildren: () => import('./filtering/filtering.module').then(m => m.FilteringModule)
+  },
+  {
+    path: 'transformations',
+    loadChildren: () => import('./transformations/transformations.module').then(m => m.TransformationsModule)
   }
 ];
 
