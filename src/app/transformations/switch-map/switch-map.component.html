@@ -3,9 +3,9 @@
     [targetLabel]="'SwitchMap'"
     [description]="'Map to observable, complete previous inner observable, emit values.'"
   >
-    <mat-form-field content>
+    <mat-form-field content *ngIf="!!sourceIndices">
       <mat-label>Selected Publisher</mat-label>
-      <mat-select [(ngModel)]="selectedSource">
+      <mat-select (valueChange)="onSourceChange($event)" [value]="selectedSource$ | async">
         <mat-option *ngFor="let id of sourceIndices" [value]="id">
           {{id}}
         </mat-option>

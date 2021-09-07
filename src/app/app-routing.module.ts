@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'transformations',
     loadChildren: () => import('./transformations/transformations.module').then(m => m.TransformationsModule)
+  },
+  {
+    path: 'multicasting',
+    loadChildren: () => import('./multicasting/multicasting.module').then(m => m.MulticastingModule)
   }
 ];
 

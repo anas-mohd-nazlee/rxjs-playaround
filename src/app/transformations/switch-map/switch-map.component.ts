@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSelect } from '@angular/material/select';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { MultiSourceBase } from '../../shared/components/multi-source-base';
 
@@ -9,16 +10,15 @@ import { MultiSourceBase } from '../../shared/components/multi-source-base';
 })
 export class SwitchMapComponent extends MultiSourceBase implements OnInit {
 
-  selectedSource = 0;
+  readonly selectedSource$: BehaviorSubject<number> = new BehaviorSubject(0);
   sourceIndices: number[] = [];
 
   constructor() {
     super();
   }
 
-  // TODO
   get target$(): Observable<any> {
-    return this.subjects$[0].pipe(switchMap(() => this.subjects$[this.selectedSource]))
+    return this.selectedSource$.pipe(switchMap(value => this.subjects$[value]))
   }
 
   ngOnInit(): void {
@@ -27,5 +27,9 @@ export class SwitchMapComponent extends MultiSourceBase implements OnInit {
   onPublishersChange(publishers$: Observable<any>[]) {
     super.onPublishersChange(publishers$);
     this.sourceIndices = this.subjects$.map((sub, index) => index);
+  }
+
+  onSourceChange(sourceId: any): void {
+    this.selectedSource$.next(sourceId);
   }
 }

@@ -4,10 +4,10 @@
 </div>
 <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="5px">
   <app-subscriber
-    *ngFor="let id of subscriberIds"
+    *ngFor="let id of subscriberIds; index as i"
     [target$]="target$"
     [subscriberLabel]="id"
-    (removeSubscriber)="onRemoveSubscriber(id)"
+    (removeSubscriber)="onRemoveSubscriber(i)"
     fxFlex="auto"
   >
   </app-subscriber>

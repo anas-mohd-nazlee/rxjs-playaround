@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  <app-target
+    [targetLabel]="'Multicast'"
+    [description]="'Share source utilizing the provided Subject.'"
+    (sendMessage)="onPushMessage($event)"
+    (finishSubject)="onCompleteSubject()"
+    (createSubject)="onCreateSubject()"
+    (disposeSubject)="onDisposeSubject()"
+  >
+    <button content mat-stroked-button (click)="onConnectObservable()">Connect</button>
+  </app-target>
+  <app-subscriber-parent
+    [target$]="target$"
+  >
+  </app-subscriber-parent>
+</div>

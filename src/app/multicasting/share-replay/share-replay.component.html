@@ -1,0 +1,25 @@
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="20px">
+  <app-target
+    [targetLabel]="'ShareReplay'"
+    [description]="'Share source and replay specified number of emissions on subscription.'"
+    (sendMessage)="onPushMessage($event)"
+    (finishSubject)="onCompleteSubject()"
+    (createSubject)="onCreateSubject()"
+    (disposeSubject)="onDisposeSubject()"
+  >
+    <div content fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field class="full-width-form" appearance="outline">
+        <mat-label>Buffer Size</mat-label>
+        <input matInput type="number" [(ngModel)]="bufferSize" (ngModelChange)="onBufferOrWindowChange()">
+      </mat-form-field>
+      <mat-form-field class="full-width-form" appearance="outline">
+        <mat-label>Window Size</mat-label>
+        <input matInput type="number" [(ngModel)]="windowSize" (ngModelChange)="onBufferOrWindowChange()">
+      </mat-form-field>
+    </div>
+  </app-target>
+  <app-subscriber-parent
+    [target$]="target$"
+  >
+  </app-subscriber-parent>
+</div>
